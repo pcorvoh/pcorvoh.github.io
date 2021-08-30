@@ -3,11 +3,11 @@
   <title>Jack博客</title>
   <icon>https://www.gravatar.com/avatar/95f3e37cb3152e52109b4fbb1cf72e17</icon>
   <subtitle>Jack博客</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://jackgithubtest.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://jackgithubtest.github.io/"/>
   <updated>2021-08-30T06:32:13.109Z</updated>
-  <id>http://example.com/</id>
+  <id>https://jackgithubtest.github.io/</id>
   
   <author>
     <name>Jack</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>解决github.io无法打开的经历</title>
-    <link href="http://example.com/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
-    <id>http://example.com/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/</id>
+    <link href="https://jackgithubtest.github.io/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
+    <id>https://jackgithubtest.github.io/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/</id>
     <published>2021-08-30T06:13:31.000Z</published>
     <updated>2021-08-30T06:32:13.109Z</updated>
     
@@ -33,14 +33,14 @@
     
     
     
-    <category term="碰到这种dns的问题该怎么排查？" scheme="http://example.com/categories/%E7%A2%B0%E5%88%B0%E8%BF%99%E7%A7%8Ddns%E7%9A%84%E9%97%AE%E9%A2%98%E8%AF%A5%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%EF%BC%9F/"/>
+    <category term="碰到这种dns的问题该怎么排查？" scheme="https://jackgithubtest.github.io/categories/%E7%A2%B0%E5%88%B0%E8%BF%99%E7%A7%8Ddns%E7%9A%84%E9%97%AE%E9%A2%98%E8%AF%A5%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%EF%BC%9F/"/>
     
-    <category term="怎么解决打不开github.io的问题？" scheme="http://example.com/categories/%E7%A2%B0%E5%88%B0%E8%BF%99%E7%A7%8Ddns%E7%9A%84%E9%97%AE%E9%A2%98%E8%AF%A5%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%EF%BC%9F/%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E6%89%93%E4%B8%8D%E5%BC%80github-io%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9F/"/>
+    <category term="怎么解决打不开github.io的问题？" scheme="https://jackgithubtest.github.io/categories/%E7%A2%B0%E5%88%B0%E8%BF%99%E7%A7%8Ddns%E7%9A%84%E9%97%AE%E9%A2%98%E8%AF%A5%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%EF%BC%9F/%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E6%89%93%E4%B8%8D%E5%BC%80github-io%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9F/"/>
     
     
-    <category term="GitHub" scheme="http://example.com/tags/GitHub/"/>
+    <category term="GitHub" scheme="https://jackgithubtest.github.io/tags/GitHub/"/>
     
-    <category term="GitHub.io" scheme="http://example.com/tags/GitHub-io/"/>
+    <category term="GitHub.io" scheme="https://jackgithubtest.github.io/tags/GitHub-io/"/>
     
   </entry>
   
