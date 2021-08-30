@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
-  
+  <title>Jack博客</title>
+  <icon>https://www.gravatar.com/avatar/95f3e37cb3152e52109b4fbb1cf72e17</icon>
+  <subtitle>Jack博客</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
@@ -10,8 +10,8 @@
   <id>http://example.com/</id>
   
   <author>
-    <name>John Doe</name>
-    
+    <name>Jack</name>
+    <email>wj1994808305@163.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
