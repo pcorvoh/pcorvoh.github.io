@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-05T09:31:43.727Z</updated>
+  <updated>2021-08-30T06:24:17.405Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决github.io无法打开的经理</title>
+    <link href="http://example.com/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
+    <id>http://example.com/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/</id>
+    <published>2021-08-30T06:13:31.000Z</published>
+    <updated>2021-08-30T06:24:17.405Z</updated>
+    
+    <content type="html"><![CDATA[<p>记得之前有 github.com 打不开或者打开很慢的解决方案，现在轮到了 github.io，哈哈。我的 github.io 很久开始就打不开了，当时从网上试了几种方法没成功就放弃了，今天查资料需要打开 github.io，又有点时间，所以主要针对这个解决了一下。从本文您可以了解到：</p><ol><li><p>碰到这种dns的问题该怎么排查？</p></li><li><p>怎么解决打不开github.io的问题？</p><p>ping命令其实很强大，不仅可以知道能不能链接，延时是多少，还可以知道dns解析的ip地址是多少，例如我们ping  <a href="http://www.github.com/">www.github.com</a></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ping www.github.com</span><br><span class="line"></span><br><span class="line">正在 Ping github.com [52.74.223.119] 具有 32 字节的数据:</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=208ms TTL=42</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=198ms TTL=42</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=202ms TTL=42</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=207ms TTL=42</span><br><span class="line"></span><br><span class="line">52.74.223.119 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，</span><br><span class="line">往返行程的估计时间(以毫秒为单位):</span><br><span class="line">    最短 = 198ms，最长 = 208ms，平均 = 203ms</span><br></pre></td></tr></table></figure><p>可以看到，后面小括号里面的 52.74.223.119 就是 ip 地址了。</p></li></ol><p>ping github.io </p><blockquote><p>ping github.io</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PING github.io (127.0.0.1): 56 data bytes</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.030 ms</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.105 ms</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.084 ms</span><br></pre></td></tr></table></figure><p>上面显示 ip 地址为<code>127.0.0.1</code>，这个就是本机地址嘛，然后我去<code>/etc/hosts</code>里面查看hosts文件有没有被意外修改过，没看到github.io被解析到<code>127.0.0.1</code>的记录，这就表示，<strong>电脑上的dns解析是完好的，但是远程的 dns 解析很可能惨遭网络运营商的污染了</strong>，从而导致解析的时候被解析到了<code>127.0.0.1</code>。</p><p>修改本机dns</p><p>修改dns的服务器地址，如下：如果【1】不行就试试【2】</p><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/40194_image-20210830142139831.png" alt="image-20210830142139831"></p><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/89065_image-20210830142211754.png" alt="image-20210830142211754"></p><p>【1】修改dns为<code>114.114.114.114</code></p><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/60336_image-20210830142112590.png" alt="image-20210830142112590"></p><p>【2】修改dns为<code>223.5.5.5</code>与<code>223.6.6.6</code></p><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/34216_image-20210830142238446.png" alt="image-20210830142238446"></p><p>7、刷新DNS<br>【1】<code>win+r</code>：输入cmd,<br>【2】在命令提示符中键入<code>ipconfig/flushdns</code></p><p>8、即可访问地址中带<code>github.io</code>的网址。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;记得之前有 github.com 打不开或者打开很慢的解决方案，现在轮到了 github.io，哈哈。我的 github.io 很久开始就打不开了，当时从网上试了几种方法没成功就放弃了，今天查资料需要打开 github.io，又有点时间，所以主要针对这个解决了一下。从本文您</summary>
+      
+    
+    
+    
+    <category term="碰到这种dns的问题该怎么排查？" scheme="http://example.com/categories/%E7%A2%B0%E5%88%B0%E8%BF%99%E7%A7%8Ddns%E7%9A%84%E9%97%AE%E9%A2%98%E8%AF%A5%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%EF%BC%9F/"/>
+    
+    <category term="怎么解决打不开github.io的问题？" scheme="http://example.com/categories/%E7%A2%B0%E5%88%B0%E8%BF%99%E7%A7%8Ddns%E7%9A%84%E9%97%AE%E9%A2%98%E8%AF%A5%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%EF%BC%9F/%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E6%89%93%E4%B8%8D%E5%BC%80github-io%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9F/"/>
+    
+    
+    <category term="GitHub" scheme="http://example.com/tags/GitHub/"/>
+    
+    <category term="GitHub.io" scheme="http://example.com/tags/GitHub-io/"/>
+    
+  </entry>
   
   <entry>
     <title>test_blog</title>

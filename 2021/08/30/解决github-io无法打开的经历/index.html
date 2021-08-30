@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>解决github.io无法打开的经理 | Hexo</title><meta name="keywords" content="GitHub,GitHub.io"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记得之前有 github.com 打不开或者打开很慢的解决方案，现在轮到了 github.io，哈哈。我的 github.io 很久开始就打不开了，当时从网上试了几种方法没成功就放弃了，今天查资料需要打开 github.io，又有点时间，所以主要针对这个解决了一下。从本文您可以了解到：  碰到这种dns的问题该怎么排查？  怎么解决打不开github.io的问题？ ping命令其实很强大，不仅可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决github.io无法打开的经理">
+<meta property="og:url" content="http://example.com/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="记得之前有 github.com 打不开或者打开很慢的解决方案，现在轮到了 github.io，哈哈。我的 github.io 很久开始就打不开了，当时从网上试了几种方法没成功就放弃了，今天查资料需要打开 github.io，又有点时间，所以主要针对这个解决了一下。从本文您可以了解到：  碰到这种dns的问题该怎么排查？  怎么解决打不开github.io的问题？ ping命令其实很强大，不仅可以">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-08-30T06:13:31.000Z">
+<meta property="article:modified_time" content="2021-08-30T06:24:17.405Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="GitHub.io">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '解决github.io无法打开的经理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-08-30 14:24:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">解决github.io无法打开的经理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-30T06:13:31.000Z" title="Created 2021-08-30 14:13:31">2021-08-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-08-30T06:24:17.405Z" title="Updated 2021-08-30 14:24:17">2021-08-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A2%B0%E5%88%B0%E8%BF%99%E7%A7%8Ddns%E7%9A%84%E9%97%AE%E9%A2%98%E8%AF%A5%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%EF%BC%9F/">碰到这种dns的问题该怎么排查？</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A2%B0%E5%88%B0%E8%BF%99%E7%A7%8Ddns%E7%9A%84%E9%97%AE%E9%A2%98%E8%AF%A5%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%EF%BC%9F/%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E6%89%93%E4%B8%8D%E5%BC%80github-io%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9F/">怎么解决打不开github.io的问题？</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="解决github.io无法打开的经理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>记得之前有 github.com 打不开或者打开很慢的解决方案，现在轮到了 github.io，哈哈。我的 github.io 很久开始就打不开了，当时从网上试了几种方法没成功就放弃了，今天查资料需要打开 github.io，又有点时间，所以主要针对这个解决了一下。从本文您可以了解到：</p>
+<ol>
+<li><p>碰到这种dns的问题该怎么排查？</p>
+</li>
+<li><p>怎么解决打不开github.io的问题？</p>
+<p>ping命令其实很强大，不仅可以知道能不能链接，延时是多少，还可以知道dns解析的ip地址是多少，例如我们ping  <a target="_blank" rel="noopener" href="http://www.github.com/">www.github.com</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ping www.github.com</span><br><span class="line"></span><br><span class="line">正在 Ping github.com [52.74.223.119] 具有 32 字节的数据:</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=208ms TTL=42</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=198ms TTL=42</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=202ms TTL=42</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=207ms TTL=42</span><br><span class="line"></span><br><span class="line">52.74.223.119 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，</span><br><span class="line">往返行程的估计时间(以毫秒为单位):</span><br><span class="line">    最短 = 198ms，最长 = 208ms，平均 = 203ms</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，后面小括号里面的 52.74.223.119 就是 ip 地址了。</p>
+</li>
+</ol>
+<p>ping github.io </p>
+<blockquote>
+<p>ping github.io</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PING github.io (127.0.0.1): 56 data bytes</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.030 ms</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.105 ms</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.084 ms</span><br></pre></td></tr></table></figure>
+
+<p>上面显示 ip 地址为<code>127.0.0.1</code>，这个就是本机地址嘛，然后我去<code>/etc/hosts</code>里面查看hosts文件有没有被意外修改过，没看到github.io被解析到<code>127.0.0.1</code>的记录，这就表示，<strong>电脑上的dns解析是完好的，但是远程的 dns 解析很可能惨遭网络运营商的污染了</strong>，从而导致解析的时候被解析到了<code>127.0.0.1</code>。</p>
+<p>修改本机dns</p>
+<p>修改dns的服务器地址，如下：如果【1】不行就试试【2】</p>
+<p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/40194_image-20210830142139831.png" alt="image-20210830142139831"></p>
+<p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/89065_image-20210830142211754.png" alt="image-20210830142211754"></p>
+<p>【1】修改dns为<code>114.114.114.114</code></p>
+<p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/60336_image-20210830142112590.png" alt="image-20210830142112590"></p>
+<p>【2】修改dns为<code>223.5.5.5</code>与<code>223.6.6.6</code></p>
+<p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/34216_image-20210830142238446.png" alt="image-20210830142238446"></p>
+<p>7、刷新DNS<br>【1】<code>win+r</code>：输入cmd,<br>【2】在命令提示符中键入<code>ipconfig/flushdns</code></p>
+<p>8、即可访问地址中带<code>github.io</code>的网址。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/">http://example.com/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/GitHub/">GitHub</a><a class="post-meta__tags" href="/tags/GitHub-io/">GitHub.io</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/05/test-blog/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">test_blog</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/" title="解决github.io无法打开的经理"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决github.io无法打开的经理"/></a><div class="content"><a class="title" href="/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/" title="解决github.io无法打开的经理">解决github.io无法打开的经理</a><time datetime="2021-08-30T06:13:31.000Z" title="Created 2021-08-30 14:13:31">2021-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/05/test-blog/" title="test_blog"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="test_blog"/></a><div class="content"><a class="title" href="/2021/08/05/test-blog/" title="test_blog">test_blog</a><time datetime="2021-08-05T09:31:43.000Z" title="Created 2021-08-05 17:31:43">2021-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/05/test/" title="test"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="test"/></a><div class="content"><a class="title" href="/2021/08/05/test/" title="test">test</a><time datetime="2021-08-05T09:09:57.000Z" title="Created 2021-08-05 17:09:57">2021-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/05/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/08/05/hello-world/" title="Hello World">Hello World</a><time datetime="2021-08-05T08:35:42.522Z" title="Created 2021-08-05 16:35:42">2021-08-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
