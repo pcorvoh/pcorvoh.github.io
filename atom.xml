@@ -6,7 +6,7 @@
   <link href="https://jackgithubtest.github.io/atom.xml" rel="self"/>
   
   <link href="https://jackgithubtest.github.io/"/>
-  <updated>2021-08-30T06:32:13.109Z</updated>
+  <updated>2021-09-01T05:00:59.128Z</updated>
   <id>https://jackgithubtest.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hexo+github搭建博客教程</title>
+    <link href="https://jackgithubtest.github.io/2021/09/01/hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"/>
+    <id>https://jackgithubtest.github.io/2021/09/01/hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</id>
+    <published>2021-09-01T02:43:01.000Z</published>
+    <updated>2021-09-01T05:00:59.128Z</updated>
+    
+    <content type="html"><![CDATA[<p>阅读须知：</p><h1 id="GitHub-Pages是什么？"><a href="#GitHub-Pages是什么？" class="headerlink" title="GitHub Pages是什么？"></a>GitHub Pages是什么？</h1><p>GitHub Pages 是由 GitHub 官方提供的一种免费的静态站点托管服务，让我们可以在 GitHub 仓库里托管和发布自己的静态网站页面。</p><h1 id="Hexo是什么"><a href="#Hexo是什么" class="headerlink" title="Hexo是什么"></a>Hexo是什么</h1><p>Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页。</p><h1 id="Hexo-GitHub发布原理"><a href="#Hexo-GitHub发布原理" class="headerlink" title="Hexo + GitHub发布原理"></a>Hexo + GitHub发布原理</h1><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/09/01/73214_image-20210901110630384.png" alt="image-20210901110630384"></p><h1 id="优点和不足"><a href="#优点和不足" class="headerlink" title="优点和不足"></a>优点和不足</h1><p><strong>优点：</strong>完全免费；静态站点，轻量快速；可按需求自由定制改造；托管在 GitHub，安全省心；迁移方便……</p><p><strong>不足：</strong>发文不便，依赖于本地环境；更适合个人博客使用；GitHub 在国内访问速度有点不快。【可以采用hosts文件修改github.com dns解析到对应的ip加快访问速度，Google浏览器可以下载IGG谷歌访问助手插件免费代理】</p><h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><p>Hexo 基于 Node.js，搭建过程中还需要使用 npm（Node.js 已带） 和 git，因此先搭建本地操作环境，安装 Node.js 和 Git。</p><ul><li>Node.js：<a href="https://link.zhihu.com/?target=https://nodejs.org/zh-cn">https://nodejs.org/zh-cn</a></li><li>Git：<a href="https://link.zhihu.com/?target=https://git-scm.com/downloads">https://git-scm.com/downloads</a></li></ul><p>下载 Node.js 和 Git 程序并安装，一路点 “下一步” 按默认配置完成安装。</p><p>进入cmd可以验证是否安装成功  node -v , npm -v 和git –version</p><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/09/01/22030_image-20210901111037848.png" alt="image-20210901111037848"></p><h2 id="Git链接GitHub"><a href="#Git链接GitHub" class="headerlink" title="Git链接GitHub"></a>Git链接GitHub</h2><p>使用邮箱注册GItHub 账户，选择免费账户，并完成邮件验证。</p><p>进入Git bash here</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;GitHub 用户名&quot;</span><br><span class="line">git config --global user.email &quot;GitHub 邮箱&quot;</span><br></pre></td></tr></table></figure><h5 id="创建SSH密钥："><a href="#创建SSH密钥：" class="headerlink" title="创建SSH密钥："></a>创建SSH密钥：</h5><p>ssh-keygen -t rsa -C “GitHub 邮箱”  Github邮箱为你注册的邮箱</p><h5 id="添加密钥："><a href="#添加密钥：" class="headerlink" title="添加密钥："></a>添加密钥：</h5><p>进入你的家目录下找到隐藏文件.ssh把 id_rsa.pub 内容到 Key 中，点击 Add SSH key 完成添加。</p><h5 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h5><p>GitHub 主页右上角加号 -&gt; New repository：</p><ul><li>Repository name 中输入 <code>用户名.github.io</code></li><li>勾选 “Initialize this repository with a README”</li><li>Description 选填</li></ul><p>填好后点击 Create repository 创建。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;阅读须知：&lt;/p&gt;
+&lt;h1 id=&quot;GitHub-Pages是什么？&quot;&gt;&lt;a href=&quot;#GitHub-Pages是什么？&quot; class=&quot;headerlink&quot; title=&quot;GitHub Pages是什么？&quot;&gt;&lt;/a&gt;GitHub Pages是什么？&lt;/h1&gt;&lt;p&gt;G</summary>
+      
+    
+    
+    
+    
+    <category term="hexo+github" scheme="https://jackgithubtest.github.io/tags/hexo-github/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解决github.io无法打开的经历</title>
     <link href="https://jackgithubtest.github.io/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
     <id>https://jackgithubtest.github.io/2021/08/30/%E8%A7%A3%E5%86%B3github-io%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%8F%E5%8E%86/</id>
     <published>2021-08-30T06:13:31.000Z</published>
-    <updated>2021-08-30T06:32:13.109Z</updated>
+    <updated>2021-09-01T05:00:54.493Z</updated>
     
     <content type="html"><![CDATA[<p>记得之前有 github.com 打不开或者打开很慢的解决方案，现在轮到了 github.io，哈哈。我的 github.io 很久开始就打不开了，当时从网上试了几种方法没成功就放弃了，今天查资料需要打开 github.io，又有点时间，所以主要针对这个解决了一下。从本文您可以了解到：</p><ol><li><p>碰到这种dns的问题该怎么排查？</p></li><li><p>怎么解决打不开github.io的问题？</p><p>ping命令其实很强大，不仅可以知道能不能链接，延时是多少，还可以知道dns解析的ip地址是多少，例如我们ping  <a href="http://www.github.com/">www.github.com</a></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ping www.github.com</span><br><span class="line"></span><br><span class="line">正在 Ping github.com [52.74.223.119] 具有 32 字节的数据:</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=208ms TTL=42</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=198ms TTL=42</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=202ms TTL=42</span><br><span class="line">来自 52.74.223.119 的回复: 字节=32 时间=207ms TTL=42</span><br><span class="line"></span><br><span class="line">52.74.223.119 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，</span><br><span class="line">往返行程的估计时间(以毫秒为单位):</span><br><span class="line">    最短 = 198ms，最长 = 208ms，平均 = 203ms</span><br></pre></td></tr></table></figure><p>可以看到，后面小括号里面的 52.74.223.119 就是 ip 地址了。</p></li></ol><p>ping github.io </p><blockquote><p>ping github.io</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PING github.io (127.0.0.1): 56 data bytes</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.030 ms</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.105 ms</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.084 ms</span><br></pre></td></tr></table></figure><p>上面显示 ip 地址为<code>127.0.0.1</code>，这个就是本机地址嘛，然后我去<code>/etc/hosts</code>里面查看hosts文件有没有被意外修改过，没看到github.io被解析到<code>127.0.0.1</code>的记录，这就表示，<strong>电脑上的dns解析是完好的，但是远程的 dns 解析很可能惨遭网络运营商的污染了</strong>，从而导致解析的时候被解析到了<code>127.0.0.1</code>。</p><p>修改本机dns</p><p>修改dns的服务器地址，如下：如果【1】不行就试试【2】</p><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/40194_image-20210830142139831.png" alt="image-20210830142139831"></p><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/89065_image-20210830142211754.png" alt="image-20210830142211754"></p><p>【1】修改dns为<code>114.114.114.114</code></p><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/60336_image-20210830142112590.png" alt="image-20210830142112590"></p><p>【2】修改dns为<code>223.5.5.5</code>与<code>223.6.6.6</code></p><p><img src="https://gitee.com/Jack_Gitee_Code/Ptoho_Iamge/raw/master/image/2021/08/30/34216_image-20210830142238446.png" alt="image-20210830142238446"></p><p>7、刷新DNS<br>【1】<code>win+r</code>：输入cmd,<br>【2】在命令提示符中键入<code>ipconfig/flushdns</code></p><p>8、即可访问地址中带<code>github.io</code>的网址。</p>]]></content>
     
