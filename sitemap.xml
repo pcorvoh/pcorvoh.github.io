@@ -81,13 +81,6 @@
 
   
   <url>
-    <loc>https://jackgithubtest.github.io/tags/hexo-github/</loc>
-    <lastmod>2021-09-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://jackgithubtest.github.io/tags/GitHub/</loc>
     <lastmod>2021-09-01</lastmod>
     <changefreq>daily</changefreq>
@@ -96,6 +89,13 @@
   
   <url>
     <loc>https://jackgithubtest.github.io/tags/GitHub-io/</loc>
+    <lastmod>2021-09-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackgithubtest.github.io/tags/hexo-github/</loc>
     <lastmod>2021-09-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
